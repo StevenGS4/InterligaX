@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Interliga X - F1</title>
+    <link rel="stylesheet" href="Inicio.css">
+    <link rel="icon" href="./Imagenes/Logo X.png" type="image/png">
+
+</head>
+
+<body>
+
+    <section class="SeccionPrincipal">
+        <div class="PanelVideo">
+            <video autoplay loop muted>
+                <source src="./Video/Fondo 2.mp4" type="video/mp4">
+                Tu navegador no soporta el video HTML5.
+            </video>
+            <div class="capa"></div>
+
+            <div class="Logotipo">
+                <img src="./Imagenes/Logo X.png" alt="Logo Interliga X" class="logo">
+            </div>
+
+            <div class="Logotipo-Texto">
+                <img src="./Imagenes/Interliga X.png" alt="Texto Interliga X" class="logo-Texto">
+                <p class="subtexto">Más que un torneo... es una pasión que ruge en cada curva.</p>
+            </div>
+
+            <div class="Patrocinadores">
+                <img src="./Imagenes/Patrocinadores.png" alt="Patrocinadores Interliga X" class="Patrocinador">
+            </div>
+
+            <a href="login.html" class="btn-iniciar-sesion">Iniciar sesión</a>
+
+            <input type="text" id="barraBusqueda" placeholder="Buscar..." class="barra-busqueda">
+
+            <a href="Registro.html" class="btn-registro">Registro</a>
+
+
+            <select class="combo-navegacion" onchange="irASeccion(this)">
+                <option selected disabled>Ir a sección...</option>
+                <option value="SeccionCategorias">Categorías</option>
+                <option value="SeccionTwitch">Transmisión</option>
+                <option value="momentos-destacados">Momentos Destacados</option>
+                <option value="SeccionRedes">Redes Sociales</option>
+                <option value="SeccionQueSomos">¿Qué somos?</option>
+                <option value="faq">Preguntas Frecuentes</option>
+            </select>
+
+
+
+        </div>
+    </section>
+
+    <!------------------------------------------->
+
+    <section class="SeccionCategorias">
+        <div class="contenido-Categorias">
+
+            <h2 class="titulo-categorias">Todas las categorías</h2>
+            <p class="subtitulo-categorias">Los torneos más importantes de México en Interliga X.</p>
+
+            <div class="logos-Categorias">
+                <img src="./Imagenes/Logo-Fusion.png" alt="Logo Interliga X Deportes" class="logo-completo">
+            </div>
+
+            <div class="tarjetas-categorias">
+                <a href="rivals.html" class="tarjeta">
+                    <img src="./Imagenes/Tarjeta-RIVALS.jpg" alt="RIVALS">
+                    <p class="nombre-tarjeta">RIVALS</p>
+                </a>
+                <a href="quick.html" class="tarjeta">
+                    <img src="./Imagenes/Tarjeta-QUICK.png" alt="QUICK">
+                    <p class="nombre-tarjeta">QUICK</p>
+                </a>
+                <a href="x.html" class="tarjeta">
+                    <img src="./Imagenes/Tarjeta-X.jpg" alt="X">
+                    <p class="nombre-tarjeta">X</p>
+                </a>
+                <a href="vr.html" class="tarjeta">
+                    <img src="./Imagenes/Tarjeta-VR.jpg" alt="VR">
+                    <p class="nombre-tarjeta">VR</p>
+                </a>
+                <a href="balam.html" class="tarjeta">
+                    <img src="./Imagenes/Tarjeta-BALAM.jpg" alt="BALAM">
+                    <p class="nombre-tarjeta">BALAM</p>
+                </a>
+                <a href="gda.html" class="tarjeta">
+                    <img src="./Imagenes/Tarjeta-GDA.jpg" alt="GDA">
+                    <p class="nombre-tarjeta">GDA</p>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!------------------------------------------->
+
+    <section class="SeccionTwitch">
+        <h2 class="titulo-twitch">Transmisión en Vivo <img src="./Imagenes/Live.png" alt="En Vivo" class="logo-en-vivo">
+        </h2>
+
+        <div class="contenedor-transmision">
+
+            <div class="video-container">
+                <video controls autoplay loop>
+                    <source src="./Video/Transmision.mp4" type="video/mp4">
+                </video>
+                <div class="info-video">
+                    <h3 class="titulo-video">Final League VR Eseries - Gran Premio Abu Dhabi 🏁</h3>
+                    <p class="descripcion-video">¡No te pierdas la carrera decisiva del campeonato! 🏁</p>
+                    <p class="vistas-video">🔴 1,524 espectadores en vivo</p>
+                </div>
+            </div>
+
+
+
+
+            <div class="chat-container">
+                <div id="chat-mensajes" class="chat-mensajes">
+                    <div class="mensaje-fantasma">⚡ Carlos: ¡Vamos equipo Jarno Opmeer!</div>
+                    <div class="mensaje-fantasma">🔥 Andrea: Tremenda carrera 😱</div>
+                    <div class="mensaje-fantasma">💬 Leo: ¿Alguien más apoya al puerco de Thomas?</div>
+                </div>
+
+                <form onsubmit="enviarMensaje(event)" class="chat-form">
+                    <input type="text" id="mensaje" placeholder="Escribe un mensaje..." required>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+
+
+
+        </div>
+    </section>
+
+    <!------------------------------------------->
+
+    <section class="momentos-destacados" style="background-image: url('./Imagenes/Fondo-Epic.png');">
+        <h2 class="titulo-momentos">Momentos Destacados</h2>
+
+        <div class="carrusel-momentos">
+            <button class="flecha izq" onclick="moverCarrusel(-1)">&#10094;</button>
+
+            <div class="contenedor-videos" id="contenedor-videos">
+                <div class="tarjeta-video">
+                    <video src="./Video/Video Trailer F1 25.mp4" controls></video>
+                    <div class="info-video">
+                        <h3>F1 25</h3>
+                        <p>Nuevo Videojuego de Formula 1, llega el F1 25.</p>
+                        <span class="fecha">📅 25 julio 2025</span>
+                    </div>
+                </div>
+
+                <div class="tarjeta-video">
+                    <video src="./Video/Video F1 Movie.mp4" controls></video>
+                    <div class="info-video">
+                        <h3>F1 The Movie</h3>
+                        <p>La maxima categoria del automovilismo llega a la pantalla grande.</p>
+                        <span class="fecha">📅 24 julio 2025</span>
+                    </div>
+                </div>
+
+                <div class="tarjeta-video">
+                    <video src="./Video/Video Experiencia.mp4" controls></video>
+                    <div class="info-video">
+                        <h3>Experiencia F1 - Pilotos Esports</h3>
+                        <p>Que se siente ser un piloto de F1 de verdad...</p>
+                        <span class="fecha">📅 24 julio 2025</span>
+                    </div>
+                </div>
+
+
+                <div class="tarjeta-video">
+                    <video src="./Video/Video Austria.mp4" controls></video>
+                    <div class="info-video">
+                        <h3>Vuelta Rapida Austria</h3>
+                        <p>World Record en la pista de Austria</p>
+                        <span class="fecha">📅 24 julio 2025</span>
+                    </div>
+                </div>
+
+
+                <div class="tarjeta-video">
+                    <video src="./Video/Fondo.mp4" controls></video>
+                    <div class="info-video">
+                        <h3>Trailer Interliga X</h3>
+                        <p>Esto es el simRacing Mexico, esto es Interliga X</p>
+                        <span class="fecha">📅 24 julio 2025</span>
+                    </div>
+                </div>
+
+                <div class="tarjeta-video">
+                    <video src="./Video/Video Mexico.mp4" controls></video>
+                    <div class="info-video">
+                        <h3>Vuelta Rapida Mexico</h3>
+                        <p>World Record en la pista de Mexico</p>
+                        <span class="fecha">📅 24 julio 2025</span>
+                    </div>
+                </div>
+
+
+                <div class="tarjeta-video">
+                    <video src="./Video/Video España.mp4" controls></video>
+                    <div class="info-video">
+                        <h3>Vuelta Rapida España</h3>
+                        <p>World Record en la pista de España</p>
+                        <span class="fecha">📅 24 julio 2025</span>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <button class="flecha der" onclick="moverCarrusel(1)">&#10095;</button>
+        </div>
+    </section>
+
+    <!------------------------------------------->
+
+    <section class="SeccionRedes">
+        <div class="redes-contenido">
+            <div class="redes-imagen">
+                <img src="./Imagenes/Redes-2.png" alt="Redes Sociales Interliga X">
+            </div>
+
+            <div class="redes-iconos">
+                <h2 class="titulo-redes">INTERLIGA X</h2>
+                <h2 class="titulo-redes">¡Síguenos en redes sociales!</h2>
+
+                <div class="iconos">
+                    <a href="https://www.instagram.com/interliga_x?utm_source=ig_web_button_share_sheet&igsh=MTVicTFtcmcycHN5OA=="
+                        target="_blank">
+                        <img src="./Imagenes/Instagram.png" alt="Instagram">
+                    </a>
+                    <a href="https://chat.whatsapp.com/LQNGYYxkVwBGp3iwgC8zkX" target="_blank">
+                        <img src="./Imagenes/whatsapp.png" alt="WhatsApp">
+                    </a>
+                    <a href="https://www.facebook.com/Formula1" target="_blank">
+                        <img src="./Imagenes/Facebook.png" alt="Facebook">
+                    </a>
+                    <a href="https://discord.gg/e4pqU2ma" target="_blank">
+                        <img src="./Imagenes/discord_PNG3.png" alt="Discord">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!------------------------------------------->
+
+    <section class="SeccionQueSomos">
+        <div class="contenido-que-somos">
+            <div class="logo-que-somos">
+                <img src="./Imagenes/Logo-Fusion.png" alt="Logo Interliga X">
+            </div>
+
+
+            <h2 class="titulo-que-somos">¿Qué somos?</h2>
+            <p class="texto-que-somos">
+                <strong>Interliga X</strong> es mucho más que una competencia: es un torneo apasionante de
+                <strong>Fórmula 1</strong> virtual que reúne a jugadores de todo México. Dividido en distintas
+                <strong>categorías</strong> competitivas, el torneo permite que pilotos de diferentes niveles puedan
+                demostrar su talento, ya sea en simuladores o plataformas de automovilismo virtual.
+            </p>
+            <p class="texto-que-somos">
+                Nuestro objetivo no es solo coronar al más rápido, sino <strong>impulsar habilidades sociales,
+                    colectivas y estratégicas</strong>. En cada carrera fomentamos la comunicación, el trabajo en
+                equipo, el respeto y la sana competencia. Aquí, todos compiten, pero también todos aprenden, crecen y se
+                inspiran.
+            </p>
+            <p class="texto-que-somos">
+                Interliga X se ha convertido en una comunidad donde <strong>la pasión por la velocidad</strong> se
+                fusiona con el compañerismo. Un espacio donde cada vuelta es una historia, cada curva es un reto y cada
+                victoria es compartida.
+            </p>
+        </div>
+    </section>
+
+
+    <!------------------------------------------->
+
+    <section class="faq">
+        <h2 class="titulo-faq">Preguntas Frecuentes</h2>
+
+        <div class="faq-item">
+            <button class="faq-pregunta" onclick="toggleFAQ(this)">
+                ¿Qué es Interliga X?
+                <span class="icono">+</span>
+            </button>
+            <div class="faq-respuesta">
+                Es una liga virtual de automovilismo basada en Fórmula 1, donde los mejores talentos compiten en
+                distintas categorías para demostrar sus habilidades y trabajo en equipo.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-pregunta" onclick="toggleFAQ(this)">
+                ¿Quién puede participar?
+                <span class="icono">+</span>
+            </button>
+            <div class="faq-respuesta">
+                Cualquier persona mayor de 14 años que cuente con un simulador o consola compatible, conexión estable y
+                ganas de competir sanamente.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-pregunta" onclick="toggleFAQ(this)">
+                ¿Cómo me inscribo?
+                <span class="icono">+</span>
+            </button>
+            <div class="faq-respuesta">
+                Puedes registrarte en nuestras redes sociales o mediante el formulario oficial en el sitio web. Las
+                plazas son limitadas por categoría.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-pregunta" onclick="toggleFAQ(this)">
+                ¿Dónde se transmiten las carreras?
+                <span class="icono">+</span>
+            </button>
+            <div class="faq-respuesta">
+                Todas las carreras en vivo se transmiten por Twitch y YouTube, con repeticiones disponibles en nuestras
+                redes oficiales.
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-contenido">
+            <img src="./Imagenes/Logo X.png" alt="Logo Interliga X" class="footer-logo">
+            <p>© 2025 Interliga X. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="Inicio.js"></script>
+</body>
+
+</html>

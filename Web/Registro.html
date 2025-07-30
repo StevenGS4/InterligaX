@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Jugadores - F1 25</title>
+  <link rel="stylesheet" href="Registro.css">
+</head>
+<body>
+
+  <div class="contenedor">
+    <!-- Logo con link -->
+    <a href="https://www.formula1.com/" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/F1.svg" 
+           alt="Logo F1 25" class="logo-f1">
+    </a>
+
+    <h1>Registro F1 25</h1>
+    <p>Completa tus datos para unirte al campeonato</p>
+
+    <form>
+      <input type="text" placeholder="Nombre de jugador" class="txtField" required>
+      <input type="text" placeholder="Usuario / Gamertag" class="txtField" required>
+      <input type="email" placeholder="Correo electrónico" class="txtField" required>
+      <input type="password" placeholder="Contraseña" class="txtField" required>
+      <input type="number" placeholder="Edad" class="txtField" min="12" required>
+
+      <!-- Nuevo campo para URL de imagen -->
+      <input type="url" placeholder="Link de tu imagen (Google)" class="txtField" id="fotoJugador" oninput="mostrarImagen()" required>
+
+      <!-- Vista previa de la imagen -->
+      <img id="preview" class="preview" src="" alt="Vista previa" style="display:none;">
+
+      <select class="txtField" required>
+        <option value="" disabled selected>Escoge tu equipo</option>
+        <option>Red Bull Racing</option>
+        <option>Mercedes AMG</option>
+        <option>Ferrari</option>
+        <option>McLaren</option>
+        <option>Aston Martin</option>
+        <option>Williams</option>
+      </select>
+
+      <button type="submit" class="btn-registrar">Registrarme</button>
+    </form>
+
+    <a href="login.html" class="link-login">¿Ya tienes cuenta? Inicia sesión</a>
+  </div>
+
+  <script>
+    // Función para mostrar vista previa de la imagen
+    function mostrarImagen() {
+      const url = document.getElementById('fotoJugador').value;
+      const preview = document.getElementById('preview');
+      if (url) {
+        preview.src = url;
+        preview.style.display = 'block';
+      } else {
+        preview.style.display = 'none';
+      }
+    }
+  </script>
+
+</body>
+</html>

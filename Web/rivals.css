@@ -1,0 +1,382 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #000;
+  color: #fff;
+}
+
+
+.hero-section {
+  background-image: url('imagenes/Fondo-Rivals.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay {
+  text-align: center;
+  padding: 40px;
+  border-radius: 10px;
+}
+
+.logo {
+  max-width: 650px;
+  width: 80%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+/******************************/
+
+.disney-section {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.disney-section h2 {
+  font-size: 28px;
+  margin-bottom: 5px;
+}
+
+.disney-section p {
+  font-size: 16px;
+  color: #ccc;
+  margin-bottom: 30px;
+}
+
+.destacada-container {
+  margin: 0 auto 30px auto;
+  max-width: 800px;
+  position: relative;
+}
+
+.destacada-container img {
+  width: 60%;
+  border-radius: 12px;
+  transition: opacity 0.4s ease;
+}
+
+.destacada-container h3 {
+  position: absolute;
+  bottom: 20px;
+  left: 170px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.galeria {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.miniatura {
+  width: 120px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.miniatura:hover {
+  transform: scale(1.08);
+}
+
+.miniatura img {
+  width: 100%;
+  border-radius: 6px;
+  border: 2px solid transparent;
+}
+
+.miniatura:hover img {
+  border-color: #fff;
+}
+
+.miniatura p {
+  font-size: 13px;
+  margin-top: 5px;
+  color: #ddd;
+  text-align: center;
+}
+
+
+
+/***************************/
+.calendario-completo {
+  display: flex;
+  gap: 30px;
+  padding: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+
+.carrusel-container {
+  flex: 1;
+  min-width: 350px;
+  max-width: 500px;
+  position: relative;
+}
+
+.carrusel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.slide {
+  width: 100%;
+  display: none;
+  height: auto;
+}
+
+.slide.active {
+  display: block;
+}
+
+.carrusel button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 12px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.carrusel .prev {
+  left: 10px;
+}
+
+.carrusel .next {
+  right: 10px;
+}
+
+.calendario-container {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+}
+
+.titulo-calendario {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.eventos-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+
+
+.evento {
+  display: flex;
+  background-color: #1a1a1a;
+  padding: 8px 10px;
+  border-radius: 8px;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.05);
+  font-size: 14px;
+  color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.bandera {
+  width: 50px;
+  height: auto;
+}
+
+.info-gp .nombre-gp {
+  font-size: 15px;
+  margin-bottom: 2px;
+}
+
+.info-gp .fecha,
+.info-gp .descripcion {
+  font-size: 12px;
+  margin: 0;
+}
+
+.evento:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(255, 255, 255, 0.1);
+}
+
+
+/************************/
+
+
+.carrusel-principal {
+  background-color: #111;
+  color: white;
+  padding: 40px 20px;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.titulo-panel {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.titulo-panel h2 {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.titulo-panel p {
+  font-size: 16px;
+  color: #aaa;
+}
+
+.paneles-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  position: relative;
+}
+
+.boton-carrusel {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.panel-activo {
+  display: flex;
+  gap: 40px;
+  flex: 1;
+  background-color: #1a1a1a;
+  padding: 30px;
+  border-radius: 12px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.panel-izq, .panel-der {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.panel-der img {
+  width: 70%;
+  max-width: 400px;
+  border-radius: 8px;
+}
+
+.subcarrusel {
+  position: relative;
+  width: 60%;
+  max-width: 500px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.subcarrusel img {
+  display: none;
+  width: 100%;
+  border-radius: 8px;
+}
+
+.subcarrusel img.activo {
+  display: block;
+}
+
+.subcarrusel button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.subcarrusel .prev-sub {
+  left: 10px;
+}
+
+.subcarrusel .next-sub {
+  right: 10px;
+}
+
+
+
+.lightbox {
+  position: fixed;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 9999;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.lightbox .cerrar {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #fff;
+  font-size: 36px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+.subtitulo-panel {
+  font-size: 18px;
+  color: #fff;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.contenido-izq, .contenido-der {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
