@@ -2,32 +2,83 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', sans-serif;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background: url('./Imagenes/Fondo-Epic.png') no-repeat center center/cover;
 }
 
-.contenedor {
-  background: rgba(0, 0, 0, 0.7);
-  padding: 40px;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-  width: 400px;
 
+
+.contenedor {
+  max-width: 420px;              /* Un poco más ancho */
+  margin: 60px auto 60px;        /* Margen arriba y abajo equilibrado */
+  background: rgba(0, 0, 0, 0.8);
+  padding: 35px 30px;            /* Padding más equilibrado */
+  border-radius: 18px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.6);
   text-align: center;
   color: white;
-  animation: fadeIn 1s ease-in-out;
+  animation: fadeIn 0.8s ease-in-out;
 }
 
-/* Animación */
+/* Ajuste de los inputs para que se vean uniformes */
+.txtField, select {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin: 12px 0;                /* Espaciado uniforme */
+  border: none;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.92);
+  font-size: 1rem;
+  outline: none;
+  transition: 0.3s;
+}
+
+.txtField, select {
+  display: block;
+  width: 100%;
+  box-sizing: border-box; /* Para que padding no rompa el width */
+  margin: 12px 0;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.92);
+  font-size: 1rem;
+  outline: none;
+  transition: 0.3s;
+}
+
+
+.btn-registrar {
+  margin-top: 10px;              /* Espaciado antes del botón */
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #ff1e00;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.link-login {
+  margin-top: 12px;              /* Espacio debajo del botón */
+  display: block;
+  font-size: 0.85rem;
+  color: #ccc;
+  text-decoration: none;
+}
+
+
+
+
 @keyframes fadeIn {
   from {opacity: 0; transform: scale(0.95);}
   to {opacity: 1; transform: scale(1);}
 }
 
-/* Logo con resplandor */
+
 .logo-f1 {
   width: 150px;
   margin-bottom: 10px;
@@ -39,25 +90,8 @@ body {
   filter: drop-shadow(0 0 12px #ff1e00) drop-shadow(0 0 20px #ff4500);
 }
 
-/* Campos */
-.txtField {
-  display: block;
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 15px;
-  border: none;
-  border-radius: 8px;
-  background-color: rgba(255, 255, 255, 0.9);
-  font-size: 1rem;
-  outline: none;
-  transition: 0.3s;
-}
 
-.txtField:focus {
-  box-shadow: 0 0 8px #ff1e00;
-}
 
-/* Vista previa de la imagen */
 .preview {
   width: 120px;
   height: 120px;
@@ -72,33 +106,178 @@ body {
   transform: scale(1.05);
 }
 
-/* Botón */
-.btn-registrar {
-  width: 100%;
-  padding: 12px;
-  border: none;
-  border-radius: 8px;
-  background-color: #ff1e00;
-  color: white;
-  font-size: 1.1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
-}
+
 
 .btn-registrar:hover {
   background-color: #cc1500;
 }
 
-/* Link */
-.link-login {
-  display: block;
-  margin-top: 15px;
-  font-size: 0.9rem;
-  color: #ccc;
-  text-decoration: none;
-}
+
 
 .link-login:hover {
   color: white;
 }
+
+
+.titulo-carrusel {
+  color: white;
+  font-size: 1.5rem;
+  margin: 40px 50px 10px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.carrusel-contenedor {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  padding: 20px 50px 50px;  /* ↑ le agregué 50px de padding abajo */
+  scrollbar-width: none;
+}
+
+
+.carrusel-contenedor::-webkit-scrollbar {
+  display: none;
+}
+
+
+@media (min-width: 768px) {
+  .carrusel-contenedor {
+    justify-content: center;
+  }
+}
+
+.card-jugador {
+  flex: 0 0 auto;
+  width: 160px;
+  background-color: #1c1c1c;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.card-jugador:hover {
+  transform: scale(1.05);
+}
+
+.card-jugador img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.card-jugador .nombre {
+  font-weight: bold;
+  padding: 6px 0 2px;
+  font-size: 1rem;
+}
+
+.card-jugador .id {
+  font-size: 0.8rem;
+  color: #bbb;
+  padding-bottom: 8px;
+}
+
+.acciones-jugador {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: none;
+  gap: 6px;
+}
+
+.card-jugador {
+  position: relative;
+}
+
+.card-jugador:hover .acciones-jugador {
+  display: flex;
+}
+
+.btn-editar {
+  background-color: rgba(141, 141, 141, 0.7);
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 4px 6px;
+  transition: background-color 0.2s;
+}
+
+.btn-editar:hover {
+  background-color: #535353;
+}
+
+
+.modal-oscuro {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(6px);
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-contenido {
+  background: #1c1c1c;
+  padding: 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+  color: white;
+  text-align: center;
+}
+
+.modal-contenido input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 8px;
+}
+
+.modal-contenido button {
+  background-color: #ff1e00;
+  color: white;
+  border: none;
+  padding: 12px;
+  width: 100%;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.cerrar {
+  color: white;
+  font-size: 24px;
+  float: right;
+  cursor: pointer;
+}
+
+
+.boton-editar {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #ff1e00;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 14px;
+  z-index: 1;
+}
+
+

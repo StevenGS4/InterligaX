@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Registro de Jugadores - F1 25</title>
   <link rel="stylesheet" href="Registro.css">
 </head>
+
 <body>
 
+  
   <div class="contenedor">
-    <!-- Logo con link -->
     <a href="https://www.formula1.com/" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/F1.svg" 
-           alt="Logo F1 25" class="logo-f1">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/F1.svg" alt="Logo F1 25" class="logo-f1">
     </a>
 
     <h1>Registro F1 25</h1>
     <p>Completa tus datos para unirte al campeonato</p>
 
-    <form>
+    <form id="form-jugador">
       <input type="text" placeholder="Nombre de jugador" class="txtField" required>
       <input type="text" placeholder="Usuario / Gamertag" class="txtField" required>
       <input type="email" placeholder="Correo electrónico" class="txtField" required>
@@ -26,7 +27,8 @@
       <input type="number" placeholder="Edad" class="txtField" min="12" required>
 
       <!-- Nuevo campo para URL de imagen -->
-      <input type="url" placeholder="Link de tu imagen (Google)" class="txtField" id="fotoJugador" oninput="mostrarImagen()" required>
+      <input type="url" placeholder="Link de tu imagen (Google)" class="txtField" id="fotoJugador"
+        oninput="mostrarImagen()" required>
 
       <!-- Vista previa de la imagen -->
       <img id="preview" class="preview" src="" alt="Vista previa" style="display:none;">
@@ -39,13 +41,21 @@
         <option>McLaren</option>
         <option>Aston Martin</option>
         <option>Williams</option>
+      
       </select>
 
       <button type="submit" class="btn-registrar">Registrarme</button>
     </form>
-
     <a href="login.html" class="link-login">¿Ya tienes cuenta? Inicia sesión</a>
   </div>
+
+
+  <!-- CARRUSEL FUERA DEL CONTENEDOR PRINCIPAL -->
+  <h2 class="titulo-carrusel">Jugadores Registrados</h2>
+  <div class="carrusel-contenedor" id="carruselJugadores">
+    <!-- Aquí van las tarjetas de jugadores dinámicamente -->
+  </div>
+
 
   <script>
     // Función para mostrar vista previa de la imagen
@@ -61,5 +71,180 @@
     }
   </script>
 
+  <script>
+    const form = document.getElementById('form-jugador');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const datos = {
+        nombre: form[0].value,
+        usuario: form[1].value,
+        correo: form[2].value,
+        contrasena: form[3].value,
+        edad: form[4].value,
+        imagen: form[5].value,
+        equipo: form[6].value
+      };
+
+      try {
+        const respuesta = await fetch("http://localhost:3000/registrar-jugador", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(datos)
+        });
+
+        const resultado = await respuesta.json();
+        alert(resultado.mensaje);
+        form.reset();
+        document.getElementById('preview').style.display = 'none';
+        document.getElementById('carruselJugadores').innerHTML = '';
+        cargarJugadores();
+      } catch (error) {
+        console.error("Error al registrar:", error);
+        alert("Hubo un error al registrar al jugador.");
+      }
+    });
+  </script>
+
+  <script>
+    async function cargarJugadores() {
+      const contenedor = document.getElementById("carruselJugadores");
+
+      try {
+        const res = await fetch("http://localhost:3000/get-jugadores");
+        const jugadores = await res.json();
+
+        jugadores.forEach(jugador => {
+          const card = document.createElement("div");
+          card.className = "card-jugador";
+          card.innerHTML = `
+          <button class="boton-editar" onclick='abrirModalEditar(${JSON.stringify(jugador)})'>✎</button>
+          <img src="${jugador.imagen}" alt="${jugador.nombre}">
+          <div class="nombre">${jugador.nombre}</div>
+          <div class="id">ID: ${jugador.usuario}</div>
+        `;
+          contenedor.appendChild(card);
+        });
+
+      } catch (error) {
+        console.error("Error al cargar jugadores:", error);
+      }
+    }
+
+    window.addEventListener("DOMContentLoaded", cargarJugadores);
+  </script>
+
+<script>
+  let jugadorActualId = null;
+
+  // Abre el modal de edición y llena los campos con los datos del jugador
+  function abrirModalEditar(jugador) {
+    jugadorActualId = jugador.id;
+
+    document.getElementById("edit-nombre").value = jugador.nombre || "";
+    document.getElementById("edit-correo").value = jugador.correo || "";
+    document.getElementById("edit-usuario").value = jugador.usuario || "";
+    document.getElementById("edit-imagen").value = jugador.imagen || "";
+    document.getElementById("edit-equipo").value = jugador.equipo || "";
+
+    document.getElementById("modal-editar").style.display = "flex";
+  }
+
+  // Cierra el modal
+  function cerrarModalEditar() {
+    document.getElementById("modal-editar").style.display = "none";
+  }
+
+  // Evento para el formulario de edición
+  window.addEventListener("DOMContentLoaded", () => {
+    const formEditar = document.getElementById("form-editar");
+
+    formEditar.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const datosActualizados = {
+        nombre: document.getElementById("edit-nombre").value,
+        correo: document.getElementById("edit-correo").value,
+        usuario: document.getElementById("edit-usuario").value,
+        imagen: document.getElementById("edit-imagen").value,
+        equipo: document.getElementById("edit-equipo").value,
+      };
+
+      try {
+        const respuesta = await fetch(`http://localhost:3000/editar-jugador/${jugadorActualId}`, {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(datosActualizados)
+        });
+
+        const resultado = await respuesta.json();
+        alert(resultado.mensaje);
+
+        cerrarModalEditar();
+        document.getElementById("carruselJugadores").innerHTML = "";
+        cargarJugadores(); // Recarga jugadores sin necesidad de recargar toda la página
+      } catch (error) {
+        console.error("Error al editar jugador:", error);
+        alert("Hubo un error al actualizar el jugador.");
+      }
+    });
+  });
+</script>
+
+<script>
+  async function eliminarJugador() {
+    const confirmar = confirm("¿Estás seguro de que deseas eliminar este jugador?");
+    if (!confirmar) return;
+
+    try {
+      const respuesta = await fetch(`http://localhost:3000/eliminar-jugador/${jugadorActualId}`, {
+        method: "DELETE"
+      });
+
+      const resultado = await respuesta.json();
+      alert(resultado.mensaje);
+
+      cerrarModalEditar();
+      document.getElementById("carruselJugadores").innerHTML = '';
+      cargarJugadores();
+    } catch (error) {
+      console.error("Error al eliminar jugador:", error);
+      alert("Hubo un error al eliminar al jugador.");
+    }
+  }
+</script>
+
+
+
+
+
+
+
+
 </body>
+
+<!-- Modal de edición -->
+<div id="modal-editar" class="modal-oscuro">
+  <div class="modal-contenido">
+    <span class="cerrar" onclick="cerrarModalEditar()">&times;</span>
+    <h2>Editar Jugador</h2>
+    <form id="form-editar">
+      <input type="text" id="edit-nombre" placeholder="Nombre">
+      <input type="email" id="edit-correo" placeholder="Correo">
+      <input type="text" id="edit-usuario" placeholder="Usuario">
+      <input type="url" id="edit-imagen" placeholder="Imagen (URL)">
+      <input type="text" id="edit-equipo" placeholder="Equipo">
+      <div style="display: flex; justify-content: space-between; gap: 10px;">
+        <button type="submit" style="flex: 1;">Actualizar</button>
+        <button type="button" onclick="eliminarJugador()" style="flex: 1; background-color: crimson; color: white;">Eliminar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+
 </html>

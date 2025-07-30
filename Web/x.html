@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sección con Fondo y Logo</title>
+  <link rel="stylesheet" href="x.css">
+  <link rel="icon" href="./Imagenes/X League Logo.png" type="image/png">
+</head>
+
+<body>
+  <section class="hero-section">
+    <div class="overlay">
+      <img src="imagenes/X League Logo.png" alt="Logo" class="logo">
+
+    </div>
+  </section>
+
+
+  <section class="imagen-destacada">
+    <div class="contenedor-imagen">
+      <img src="Imagenes/Miniatura X.png" alt="Imagen Destacada">
+    </div>
+  </section>
+
+
+
+  <section class="disney-section">
+    <h2>Equipos</h2>
+    <p>¡Los mejores equipos dispuestos a dejarlo todo en la pista!</p>
+
+    <div class="destacada-container">
+      <img src="imagenes/X Sky.png" alt="Destacada" id="imagenDestacada">
+      <h3 id="tituloDestacado">EQUIPO CAMPEÓN 1° - SKYLINE RACING ESPORTS</h3>
+    </div>
+
+    <div class="galeria">
+      <div class="miniatura"
+        onclick="cambiarImagen('imagenes/X Sky.png', 'EQUIPO CAMPEÓN 1° - SKYLINE RACING ESPORTS')">
+        <img src="imagenes/X Sky.png" alt="Miniatura 1">
+        <p>SKY</p>
+      </div>
+      <div class="miniatura" onclick="cambiarImagen('imagenes/X lkr.png', '2do - LOYAL KINGDOM RACING')">
+        <img src="imagenes/X lkr.png" alt="Miniatura 2">
+        <p>LKR</p>
+      </div>
+      <div class="miniatura" onclick="cambiarImagen('imagenes/X mlc.png', '3er - MOTOR LEGENDS CREW')">
+        <img src="imagenes/X mlc.png" alt="Miniatura 3">
+        <p>MLC</p>
+      </div>
+      <div class="miniatura" onclick="cambiarImagen('imagenes/X srx.png', '4to - SYNERY RACING XPERIENCE')">
+        <img src="imagenes/X srx.png" alt="Miniatura 1">
+        <p>SRX</p>
+      </div>
+      <div class="miniatura" onclick="cambiarImagen('imagenes/X tiic.png', '5to - TEAM HERMANDAD CHILLESCA')">
+        <img src="imagenes/X tiic.png" alt="Miniatura 2">
+        <p>TIIC</p>
+      </div>
+      <div class="miniatura" onclick="cambiarImagen('imagenes/X spr.png', '6to - SCUDERIA PHANTOM RACING')">
+        <img src="imagenes/X spr.png" alt="Miniatura 3">
+        <p>SPR</p>
+      </div>
+      <div class="miniatura" onclick="cambiarImagen('imagenes/X sgc.png', '7mo - SAVITAR GAMING COMMUNITY')">
+        <img src="imagenes/X sgc.png" alt="Miniatura 1">
+        <p>SGC</p>
+      </div>
+      <div class="miniatura" onclick="cambiarImagen('imagenes/X gda.png', '8vo - GLADIADORES DEL ASFALTO')">
+        <img src="imagenes/X gda.png" alt="Miniatura 2">
+        <p>GDA</p>
+      </div>
+
+    </div>
+  </section>
+
+
+
+  <section class="calendario-completo">
+
+    <div class="carrusel-container">
+      <div class="carrusel">
+        <img src="imagenes/Calendario League X.png" class="slide active" alt="Circuito 1">
+
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+      </div>
+    </div>
+
+    <div class="calendario-container">
+      <h2 class="titulo-calendario">Calendario de Grandes Premios</h2>
+
+      <div class="eventos-grid">
+        <div class="evento">
+          <img src="imagenes/Singapur.png" alt="Bandera" class="bandera">
+          <div class="info-gp">
+            <h3 class="nombre-gp">Gran Premio de Singapur</h3>
+            <p class="fecha">🗓️ 31 de Marzo del 2025 | CATEGORIA ESTELAR</p>
+
+          </div>
+        </div>
+
+        <div class="evento">
+          <img src="imagenes/Qatar.png" alt="Bandera" class="bandera">
+          <div class="info-gp">
+            <h3 class="nombre-gp">Gran Premio de Qatar</h3>
+            <p class="fecha">🗓️ 7 de Abril del 2025 | CATEGORIA ESTELAR</p>
+
+          </div>
+        </div>
+
+
+        <div class="evento">
+          <img src="imagenes/Japon.png" alt="Bandera" class="bandera">
+          <div class="info-gp">
+            <h3 class="nombre-gp">Gran Premio de Japon</h3>
+            <p class="fecha">🗓️ 14 de Abril del 2025 | CATEGORIA ESTELAR</p>
+
+          </div>
+        </div>
+
+        <div class="evento">
+          <img src="imagenes/España.png" alt="Bandera" class="bandera">
+          <div class="info-gp">
+            <h3 class="nombre-gp">Gran Premio de España</h3>
+            <p class="fecha">🗓️ 21 de Abril del 2025 | CATEGORIA ESTELAR</p>
+
+          </div>
+        </div>
+
+
+
+        <div class="evento">
+          <img src="imagenes/Paises Bajos.png" alt="Bandera" class="bandera">
+          <div class="info-gp">
+            <h3 class="nombre-gp">Gran Premio de Paises Bajos</h3>
+            <p class="fecha">🗓️ 28 de Abril del 2025 | CATEGORIA ESTELAR</p>
+
+          </div>
+        </div>
+
+        <div class="evento">
+          <img src="imagenes/Belgica.png" alt="Bandera" class="bandera">
+          <div class="info-gp">
+            <h3 class="nombre-gp">Gran Premio de Belgica</h3>
+            <p class="fecha">🗓️ 5 de Mayo del 2025 | CATEGORIA ESTELAR</p>
+
+          </div>
+        </div>
+
+
+
+        <div class="evento">
+          <img src="imagenes/Hungria.png" alt="Bandera" class="bandera">
+          <div class="info-gp">
+            <h3 class="nombre-gp">Gran Premio de Hungria</h3>
+            <p class="fecha">🗓️ 26 de mayo de 2025 | CATEGORIA ESTELAR</p>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section class="carrusel-principal">
+    <div class="titulo-panel">
+      <h2 id="nombreEvento">Fecha 1 - Gran Premio de Singapur</h2>
+      <p id="fechaEvento">31 de Marzo del 2025</p>
+    </div>
+
+    <div class="paneles-container">
+      <button class="boton-carrusel" onclick="cambiarPanel(-1)">&#10094;</button>
+
+      <div class="panel-activo">
+        <div class="panel-izq">
+          <div class="contenido-izq">
+            <h3 class="subtitulo-panel">Resultados por carrera</h3>
+            <div class="subcarrusel">
+              <img src="imagenes/Fecha 1 X - 1.jpg" class="resultado activo" alt="Resultado 1"
+                onclick="ampliarImagen(this.src)">
+              <img src="imagenes/Fecha 1 X - 1.jpg" class="resultado" alt="Resultado 2" onclick="ampliarImagen(this.src)">
+              <img src="imagenes/Fecha 1 X - 2.jpg" class="resultado" alt="Resultado 3" onclick="ampliarImagen(this.src)">
+              <button class="prev-sub" onclick="cambiarResultado(-1)">&#10094;</button>
+              <button class="next-sub" onclick="cambiarResultado(1)">&#10095;</button>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="panel-der">
+          <div class="contenido-der">
+            <h3 class="subtitulo-panel">Mundial</h3>
+            <img src="imagenes/Mundial X 1.jpg" id="imagenMundial" alt="Tabla Mundial"
+              onclick="ampliarImagen(this.src)">
+          </div>
+        </div>
+      </div>
+
+      <button class="boton-carrusel" onclick="cambiarPanel(1)">&#10095;</button>
+    </div>
+  </section>
+
+
+  <div id="lightbox" class="lightbox">
+    <span class="cerrar" onclick="cerrarLightbox()">✕</span>
+    <img id="imagenAmpliada" src="" alt="Vista ampliada">
+  </div>
+
+
+  <!------------------------------------------->
+
+  <section class="SeccionRedes">
+    <div class="redes-contenido">
+      <div class="redes-imagen">
+        <img src="./Imagenes/Redes-2.png" alt="Redes Sociales Interliga X">
+      </div>
+
+      <div class="redes-iconos">
+        <h2 class="titulo-redes">INTERLIGA X</h2>
+        <h2 class="titulo-redes">¡Síguenos en redes sociales!</h2>
+
+        <div class="iconos">
+          <a href="https://www.instagram.com/interliga_x?utm_source=ig_web_button_share_sheet&igsh=MTVicTFtcmcycHN5OA=="
+            target="_blank">
+            <img src="./Imagenes/Instagram.png" alt="Instagram">
+          </a>
+          <a href="https://chat.whatsapp.com/LQNGYYxkVwBGp3iwgC8zkX" target="_blank">
+            <img src="./Imagenes/whatsapp.png" alt="WhatsApp">
+          </a>
+          <a href="https://www.facebook.com/Formula1" target="_blank">
+            <img src="./Imagenes/Facebook.png" alt="Facebook">
+          </a>
+          <a href="https://discord.gg/e4pqU2ma" target="_blank">
+            <img src="./Imagenes/discord_PNG3.png" alt="Discord">
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-contenido">
+      <img src="./Imagenes/Logo X.png" alt="Logo Interliga X" class="footer-logo">
+      <p>© 2025 Interliga X. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="x.js"></script>
+
+</body>
+
+</html>

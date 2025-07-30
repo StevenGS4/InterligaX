@@ -30,28 +30,29 @@ function cambiarImagen(ruta, titulo) {
 
 const eventos = [
   {
-    nombre: "Fecha 1 - Gran Premio de México y Brasil",
+    nombre: "Fecha 1 - Gran Premio de Brasil",
     fecha: "31 de Marzo del 2025",
     resultados: [
-      "imagenes/Fecha 1 - 1.jpg",
-      "imagenes/Fecha 1 - 2.jpg",
-      "imagenes/Fecha 1 - 3.jpg",
-      "imagenes/Fecha 1 - 4.jpg"
+      "imagenes/Fecha 1 Q.jpg"
     ],
-    mundial: "imagenes/Mundial - 1.jpg"
+    mundial: "imagenes/Mundial Ronda 1 Q.jpg"
   },
   {
-    nombre: "Fecha 2 - Gran Premio de Paises Bajos y Monza",
+    nombre: "Fecha 2 - Gran Premio de Belgica",
     fecha: "7 de Abril del 2025",
     resultados: [
-      "imagenes/Fecha 2 - 1.jpg",
-      "imagenes/Fecha 2 - 2.jpg",
-      "imagenes/Fecha 2 - 3.jpg",
-      "imagenes/Fecha 2 - 4.jpg"
+      "imagenes/Fecha 2 Q.jpg"
     ],
-    mundial: "imagenes/Mundial - 2.jpg"
+    mundial: "imagenes/Mundial Ronda 2 Q.jpg"
+  },
+  {
+    nombre: "Fecha 3 - Gran Premio de Italia",
+    fecha: "14 de Abril del 2025",
+    resultados: [
+      "imagenes/Fecha 4 Q.jpg"
+    ],
+    mundial: "imagenes/Mundial Ronda 4 Q.jpg"
   }
-
 
 ];
 

@@ -7,13 +7,13 @@
 body, html {
   height: 100%;
   font-family: Arial, sans-serif;
-  background-color: #000;
+  background-color: #000000;
   color: #fff;
 }
 
 
 .hero-section {
-  background-image: url('imagenes/Fondo-Rivals.jpg');
+  background-image: url('imagenes/Fondo-Qucik.jpg');
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -29,8 +29,8 @@ body, html {
 }
 
 .logo {
-  max-width: 650px;
-  width: 80%;
+  max-width: 1000px;
+  width: 100%;
   height: auto;
   margin-bottom: 20px;
 }
@@ -72,7 +72,7 @@ body, html {
 }
 
 .disney-section p {
-  font-size: 16px;
+  font-size: 20px;
   color: #ccc;
   margin-bottom: 30px;
 }
@@ -84,7 +84,7 @@ body, html {
 }
 
 .destacada-container img {
-  width: 60%;
+  width: 90%;
   border-radius: 12px;
   transition: opacity 0.4s ease;
 }
@@ -92,7 +92,7 @@ body, html {
 .destacada-container h3 {
   position: absolute;
   bottom: 20px;
-  left: 170px;
+  left: 300px;
   font-size: 18px;
   font-weight: bold;
   color: white;
@@ -150,7 +150,7 @@ body, html {
 
 .carrusel-container {
   flex: 1;
-  left: 100px;
+  left: 70px;
   min-width: 350px;
   max-width: 500px;
   position: relative;
@@ -201,7 +201,7 @@ body, html {
 }
 
 .titulo-calendario {
-  font-size: 24px;
+  font-size: 30px;
   margin-bottom: 20px;
   color: #fff;
   text-align: center;
@@ -232,18 +232,18 @@ body, html {
 
 
 .bandera {
-  width: 50px;
+  width: 150px;
   height: auto;
 }
 
 .info-gp .nombre-gp {
-  font-size: 15px;
+  font-size: 35px;
   margin-bottom: 2px;
 }
 
 .info-gp .fecha,
 .info-gp .descripcion {
-  font-size: 12px;
+  font-size: 20px;
   margin: 0;
 }
 

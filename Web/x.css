@@ -13,7 +13,7 @@ body, html {
 
 
 .hero-section {
-  background-image: url('imagenes/Fondo-Rivals.jpg');
+  background-image: url('imagenes/Fondo\ League\ X.jpg');
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -29,8 +29,8 @@ body, html {
 }
 
 .logo {
-  max-width: 650px;
-  width: 80%;
+  max-width: 1000px;
+  width: 110%;
   height: auto;
   margin-bottom: 20px;
 }
@@ -150,7 +150,7 @@ body, html {
 
 .carrusel-container {
   flex: 1;
-  left: 100px;
+  left: 170px;
   min-width: 350px;
   max-width: 500px;
   position: relative;

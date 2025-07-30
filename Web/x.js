@@ -30,28 +30,23 @@ function cambiarImagen(ruta, titulo) {
 
 const eventos = [
   {
-    nombre: "Fecha 1 - Gran Premio de México y Brasil",
+    nombre: "Fecha 1 - Gran Premio de Singapur",
     fecha: "31 de Marzo del 2025",
     resultados: [
-      "imagenes/Fecha 1 - 1.jpg",
-      "imagenes/Fecha 1 - 2.jpg",
-      "imagenes/Fecha 1 - 3.jpg",
-      "imagenes/Fecha 1 - 4.jpg"
+      "imagenes/Fecha 1 X - 1.jpg",
+      "imagenes/Fecha 1 X - 2.jpg"
     ],
-    mundial: "imagenes/Mundial - 1.jpg"
+    mundial: "imagenes/Mundial X 1.jpg"
   },
   {
-    nombre: "Fecha 2 - Gran Premio de Paises Bajos y Monza",
+    nombre: "Fecha 2 - Gran Premio de Qatar",
     fecha: "7 de Abril del 2025",
     resultados: [
-      "imagenes/Fecha 2 - 1.jpg",
-      "imagenes/Fecha 2 - 2.jpg",
-      "imagenes/Fecha 2 - 3.jpg",
-      "imagenes/Fecha 2 - 4.jpg"
+      "imagenes/Fecha 2 X - 1.jpg",
+      "imagenes/Fecha 2 X - 2.jpg"
     ],
-    mundial: "imagenes/Mundial - 2.jpg"
+    mundial: "imagenes/Mundial X 3.jpg"
   }
-
 
 ];
 
